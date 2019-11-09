@@ -14,9 +14,9 @@ help.md
 .settings
 .classpath
  
- 
 /node_modules/
 /dist/
 /build/
+dist
  
 application.properties
