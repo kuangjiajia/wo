@@ -28,13 +28,33 @@ const resolveModule = (resolveFn, filePath) => {
 }
 
 const CONFIG_PATH = {
-  mainEntry: resolveModule(resolveApp, 'src/index'),
-  printEntry: resolveModule(resolveApp, 'src/print'),
-  templatePath: resolveApp('public/index.html'),
-  outPutDir: resolveApp('dist'),
-  pubicPath: resolveApp('/assets/'),
+  env: resolveApp('.env'),
+  appPath: resolveApp('.'),
   appSrc: resolveApp('src'),
   appPublic: resolveApp('public'),
+  appHtml: resolveApp('public/index.html'),
+  appBuild: resolveApp('build'),
+  appPackageJson: resolveApp('package.json'),
+  appTsConfig: resolveApp('tsconfig.json'),
+  appIndexJs: resolveModule(resolveApp, 'src/index'),
+  appTest: resolveApp('test'),
+  appDist: resolveApp('dist'),
+  appAssets: resolveApp('assets'),
+  appOutputPublic: '/',
 }
 
-module.exports = CONFIG_PATH;
+const ALIAS_PATH = {
+  alias_constants: resolveApp('src/constants'),
+  alias_redux: resolveApp('src/redux'),
+  alias_components: resolveApp('src/components'),
+  alias_utils: resolveApp('src/utils'),
+  alias_actions: resolveApp('src/redux/actions'),
+  alias_reducer: resolveApp('src/redux/reducer'),
+}
+
+
+module.exports = {
+  CONFIG_PATH,
+  ALIAS_PATH,
+  moduleFileExtensions,
+};

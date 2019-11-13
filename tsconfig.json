@@ -1,11 +1,35 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
+    "outDir": "./dist/js",
     "noImplicitAny": true,
     "sourceMap": true,
     "module": "es6",
     "target": "es5",
     "jsx": "react",
-    "allowJs": true
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "$constants/*": [
+        "src/constants/*"
+      ],
+      "$utils/*": [
+        "src/utils/*",
+      ],
+      "$redux/*": [
+        "src/redux/*",
+      ],
+      "$reducer/*": [
+        "src/redux/reducer/*",
+      ],
+      "$components/*": [
+        "src/components/*"
+      ],
+      "$actions/*": [
+        "src/redux/actions/*",
+      ]
+    }
   }
 }
